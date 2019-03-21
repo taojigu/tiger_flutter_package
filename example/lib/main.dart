@@ -1,14 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:tiger_package/tiger_home_page.dart';
+import 'dart:ui';
+import 'package:tiger_flutter_package/tiger_home_page.dart';
 
-void main() => runApp(MyApp());
+Widget _widgetForRoute(String route) {
+
+  switch(route) {
+    case 'tiger':return MaterialApp(
+      title: "tiger app",
+      theme: ThemeData.dark(),
+      home:TigerHomePage(title: "Tiger Home Page")
+    );
+    case 'lion':return MaterialApp(
+      title: "lion title",
+      theme: ThemeData.light(),
+      home: TigerHomePage(title: "Lanist always pay",)
+    );
+  }
+  return MyApp();
+}
+
+
+void main() => runApp(_widgetForRoute(window.defaultRouteName));
+
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TigerPackage Demo',
+      title: 'Default Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -21,7 +42,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: TigerHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

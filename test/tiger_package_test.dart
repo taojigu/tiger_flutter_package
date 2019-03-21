@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:tiger_package/tiger_package.dart';
+import 'package:tiger_flutter_package/tiger_package.dart';
 
 void main() {
   test('adds one to input values', () {
